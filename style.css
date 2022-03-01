@@ -1,0 +1,66 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav {
+    margin: 0;
+    padding: 5px 0;
+}
+
+nav li {
+    color: black;
+    font-size: 12px;
+    float: right;
+    width: 60px;
+    list-style: none;
+}
+
+#initials {
+    float: left;
+    font-size: 24px;
+}
+
+main {
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.jumbotron {
+    height: 800px;
+    background-image: url("");
+    background-size: cover;
+}
+
+#gallery {
+    /* display: grid; */
+    /* grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-area: auto; */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: 11px;
+}
