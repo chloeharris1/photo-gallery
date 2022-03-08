@@ -1,66 +1,50 @@
-html,
-body {
+.body {
     margin: 0;
-    padding: 0;
 }
 
-header {
-    position: fixed;
+.image-grid {
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 300px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: 1.5rem;
+}
+
+.image-grid>img {
     width: 100%;
-    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-nav {
-    margin: 0;
-    padding: 5px 0;
+.item-1x1 {
+    grid-column: span 1;
+    grid-row: span 1;
+    /* New CSS property that ensures the element maintains a width x height ratio */
+    aspect-ratio: 1 / 1;
 }
 
-nav li {
-    color: black;
-    font-size: 12px;
-    float: right;
-    width: 60px;
-    list-style: none;
+
+/* .image-grid-col-2 {
+    grid-column: 2;
 }
 
-#initials {
-    float: left;
-    font-size: 24px;
+.image-grid-row-2 {
+    grid-row: span 2;
 }
 
-main {
-    text-align: center;
-    position: relative;
-    top: 80px;
+.image-grid-row-3 {
+    grid-row: span 3;
 }
+ */
 
-.container {
-    max-width: 940px;
-    margin: 0 auto;
-    padding: 0 10px;
-    text-align: center;
-}
-
-.jumbotron {
-    height: 800px;
-    background-image: url("");
-    background-size: cover;
-}
-
-#gallery {
-    /* display: grid; */
-    /* grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-area: auto; */
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 5px 0;
-}
-
-footer p {
-    text-transform: uppercase;
-    font-size: 11px;
+@media screen and (max-width: 1024px) {
+    .image-grid {
+        --num-cols: 2;
+        --row-height: 200px;
+    }
 }
