@@ -11,7 +11,10 @@
     display: grid;
     grid-template-columns: repeat(var(--num-cols), 1fr);
     grid-auto-rows: var(--row-height);
-    gap: 1.5rem;
+    gap: 1rem;
+    /* This will bring any item that fits forward to fill in the gaps */
+    grid-auto-flow: dense;
+    /* width: 75vw; */
 }
 
 .image-grid>img {
@@ -28,19 +31,58 @@
     aspect-ratio: 1 / 1;
 }
 
-
-/* .image-grid-col-2 {
-    grid-column: 2;
-}
-
-.image-grid-row-2 {
+.item-1x2 {
+    grid-column: span 1;
     grid-row: span 2;
+    aspect-ratio: 1 / 2;
 }
 
-.image-grid-row-3 {
+.item-1x3 {
+    grid-column: span 1;
     grid-row: span 3;
+    aspect-ratio: 1 / 3;
 }
- */
+
+.item-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: 1 / 1;
+}
+
+.item-2x1 {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 2 / 1;
+}
+
+.item-2x3 {
+    grid-column: span 2;
+    grid-row: span 3;
+    aspect-ratio: 2 /3;
+}
+
+.item-3x1 {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.item-3x2 {
+    grid-column: span 3;
+    grid-row: span 2;
+    aspect-ratio: 3 / 2;
+}
+
+.item-3x3 {
+    grid-column: span 3;
+    grid-row: span 3;
+    aspect-ratio: 1 /1;
+}
+
+.pano {
+    grid-column: span 4;
+    grid-row: span 2;
+    aspect-ratio: 4 /2;
+}
 
 @media screen and (max-width: 1024px) {
     .image-grid {
