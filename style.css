@@ -1,8 +1,11 @@
-.body {
+body {
     margin: 0;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #f1dfd1;
+    background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
 }
 
-.image-grid {
+.gallery-grid {
     --gap: 16px;
     --num-cols: 4;
     --row-height: 300px;
@@ -15,9 +18,38 @@
     /* This will bring any item that fits forward to fill in the gaps */
     grid-auto-flow: dense;
     /* width: 75vw; */
+    align-items: center;
 }
 
-.image-grid>img {
+.container {
+    width: 100%;
+    margin: 0;
+}
+
+.container>ul {
+    display: inline;
+    list-style: none;
+    width: 60px;
+}
+
+.container li {
+    float: right;
+    width: 60px;
+}
+
+h1 {
+    font-size: 75px;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+footer {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.gallery-grid>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,3 +122,75 @@
         --row-height: 200px;
     }
 }
+
+
+/* For typical mobile devices */
+
+
+/* @media only screen and (min-width: 320px) and (max-width: 479px) {
+    .image-grid {
+        --num-cols: 1;
+        --row-height: auto;
+    }
+} */
+
+
+/* For mobile (landscape) */
+
+
+/* @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .image-grid {
+        --num-cols: 1;
+        --row-height: auto;
+    }
+} */
+
+@media (max-width: 700px) {
+    .image-grid {
+        grid-template-areas: ;
+    }
+}
+
+
+/* For tablet */
+
+
+/* @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .image-grid {
+        --num-cols: 2;
+        --row-height: auto;
+    }
+} */
+
+
+/* For small desktop */
+
+
+/* @media only screen and (min-width: 980px) and (max-width: 1023px) {
+    .image-grid {
+        --num-cols: 4;
+        --row-height: auto;
+    }
+} */
+
+
+/* For typical desktop */
+
+
+/* @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    .image-grid {
+        --num-cols: 1;
+        --row-height: 200px;
+    }
+} */
+
+
+/* For large desktop */
+
+
+/* @media only screen and (min-width: 1200px) {
+    .image-grid {
+        --num-cols: 1;
+        --row-height: 200px;
+    }
+} */
