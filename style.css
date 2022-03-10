@@ -1,196 +1,72 @@
-body {
-    margin: 0;
-    font-family: 'Bebas Neue', cursive;
-    background-color: #f1dfd1;
-    background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
-}
-
-.gallery-grid {
-    --gap: 16px;
-    --num-cols: 4;
-    --row-height: 300px;
-    box-sizing: border-box;
-    padding: var(--gap);
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: 1rem;
-    /* This will bring any item that fits forward to fill in the gaps */
-    grid-auto-flow: dense;
-    /* width: 75vw; */
-    align-items: center;
-}
-
-.container {
-    width: 100%;
-    margin: 0;
-}
-
-.container>ul {
-    display: inline;
-    list-style: none;
-    width: 60px;
-}
-
-.container li {
-    float: right;
-    width: 60px;
-}
-
-h1 {
-    font-size: 75px;
-    margin: 0;
-    padding-left: 1rem;
-}
-
-footer {
-    font-size: 18px;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.gallery-grid>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.item-1x1 {
-    grid-column: span 1;
-    grid-row: span 1;
-    /* New CSS property that ensures the element maintains a width x height ratio */
-    aspect-ratio: 1 / 1;
-}
-
-.item-1x2 {
-    grid-column: span 1;
-    grid-row: span 2;
-    aspect-ratio: 1 / 2;
-}
-
-.item-1x3 {
-    grid-column: span 1;
-    grid-row: span 3;
-    aspect-ratio: 1 / 3;
-}
-
-.item-2x2 {
-    grid-column: span 2;
-    grid-row: span 2;
-    aspect-ratio: 1 / 1;
-}
-
-.item-2x1 {
-    grid-column: span 2;
-    grid-row: span 1;
-    aspect-ratio: 2 / 1;
-}
-
-.item-2x3 {
-    grid-column: span 2;
-    grid-row: span 3;
-    aspect-ratio: 2 /3;
-}
-
-.item-3x1 {
-    grid-column: span 3;
-    grid-row: span 1;
-}
-
-.item-3x2 {
-    grid-column: span 3;
-    grid-row: span 2;
-    aspect-ratio: 3 / 2;
-}
-
-.item-3x3 {
-    grid-column: span 3;
-    grid-row: span 3;
-    aspect-ratio: 1 /1;
-}
-
-.pano {
-    grid-column: span 4;
-    grid-row: span 2;
-    aspect-ratio: 4 /2;
-}
-
-@media screen and (max-width: 1024px) {
-    .image-grid {
-        --num-cols: 2;
-        --row-height: 200px;
+    /* Non-grid specific CSS */
+    
+    body {
+        margin-top: 0;
+        box-sizing: border-box;
+        font-family: 'Bebas Neue', cursive;
+        background-color: #f1dfd1;
+        background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
     }
-}
-
-
-/* For typical mobile devices */
-
-
-/* @media only screen and (min-width: 320px) and (max-width: 479px) {
-    .image-grid {
-        --num-cols: 1;
-        --row-height: auto;
+    /* Body container */
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: minmax(10px, auto);
     }
-} */
-
-
-/* For mobile (landscape) */
-
-
-/* @media only screen and (min-width: 480px) and (max-width: 767px) {
-    .image-grid {
-        --num-cols: 1;
-        --row-height: auto;
+    
+    header {
+        grid-column: span 6;
+        display: inline;
+        padding-top: 1.5rem;
     }
-} */
-
-@media (max-width: 700px) {
-    .image-grid {
-        grid-template-areas: ;
+    
+    h1 {
+        display: inline;
     }
-}
-
-
-/* For tablet */
-
-
-/* @media only screen and (min-width: 768px) and (max-width: 979px) {
-    .image-grid {
-        --num-cols: 2;
-        --row-height: auto;
+    
+    span {
+        font-family: 'Zeyada', cursive;
+        font-size: 58px;
     }
-} */
-
-
-/* For small desktop */
-
-
-/* @media only screen and (min-width: 980px) and (max-width: 1023px) {
-    .image-grid {
-        --num-cols: 4;
-        --row-height: auto;
+    
+    header li {
+        float: right;
+        width: 60px;
+        list-style: none;
+        padding-top: 2rem;
     }
-} */
-
-
-/* For typical desktop */
-
-
-/* @media only screen and (min-width: 1024px) and (max-width: 1199px) {
-    .image-grid {
-        --num-cols: 1;
-        --row-height: 200px;
+    /* Image gallery container */
+    
+    .gallery-grid {
+        grid-column: 1/7;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, auto));
+        justify-content: center;
+        grid-auto-flow: dense;
+        gap: 1rem;
+        margin: 1rem;
     }
-} */
-
-
-/* For large desktop */
-
-
-/* @media only screen and (min-width: 1200px) {
-    .image-grid {
-        --num-cols: 1;
-        --row-height: 200px;
+    
+    .gallery-grid>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
     }
-} */
+    
+    h1 {
+        font-size: 75px;
+        margin: 0;
+        padding-left: 1rem;
+        color: #391e22;
+        text-align: center;
+    }
+    
+    footer {
+        display: inline;
+        font-size: 18px;
+        color: #391e22;
+        text-align: center;
+        grid-column: span 6;
+    }
