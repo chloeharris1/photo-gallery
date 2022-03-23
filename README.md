@@ -3,6 +3,8 @@
 
 # Description 
 
+*WIP*
+
 A personal photo gallery website inspired by American landscape photographer Ansel Adams. 
 
 This project features some of my favorite photos from my travels and uses CSS Grids for the gallery layout.  
